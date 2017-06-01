@@ -123,3 +123,8 @@ C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\bin\pt-br\System.Web.H
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.csprojResolveAssemblyReference.cache
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.dll
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.pdb
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\bin\HortaApp.Domain.dll
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\bin\HortaApp.Domain.pdb
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.Migrations.InitialCreate.resources
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.csproj.GenerateResource.Cache
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.Migrations.AddPerfil.resources

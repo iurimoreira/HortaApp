@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HortaApp.Web.Models;
+using HortaApp.Web.Models.ViewModels;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;

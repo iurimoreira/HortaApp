@@ -29,5 +29,7 @@ namespace HortaApp.Web.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<HortaApp.Domain.PerfilUsuario> PerfilUsuarios { get; set; }
     }
 }

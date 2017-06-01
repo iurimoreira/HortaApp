@@ -228,10 +228,20 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PerfilUsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705312039433_InitialCreate.cs" />
+    <Compile Include="Migrations\201705312039433_InitialCreate.Designer.cs">
+      <DependentUpon>201705312039433_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706010242195_Add-Perfil.cs" />
+    <Compile Include="Migrations\201706010242195_Add-Perfil.Designer.cs">
+      <DependentUpon>201706010242195_Add-Perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -301,7 +311,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HortaApp.Domain\HortaApp.Domain.csproj">
+      <Project>{c7dfd29a-593e-410e-91f3-7cc7e90bc727}</Project>
+      <Name>HortaApp.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
@@ -316,6 +331,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705312039433_InitialCreate.resx">
+      <DependentUpon>201705312039433_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706010242195_Add-Perfil.resx">
+      <DependentUpon>201706010242195_Add-Perfil.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

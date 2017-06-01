@@ -1,6 +1,6 @@
 ﻿namespace HortaApp.Domain
 {
-    class PerfilUsuario
+    public class PerfilUsuario
     {
         public int PerfilUsuarioId { get; set; }
 

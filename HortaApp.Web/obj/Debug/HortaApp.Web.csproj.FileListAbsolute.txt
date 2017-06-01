@@ -114,3 +114,5 @@ C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\pt-br\Microsoft.Ow
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\obj\Debug\HortaApp.Web.csprojResolveAssemblyReference.cache
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\obj\Debug\HortaApp.Web.dll
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\obj\Debug\HortaApp.Web.pdb
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\HortaApp.Domain.dll
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\HortaApp.Domain.pdb

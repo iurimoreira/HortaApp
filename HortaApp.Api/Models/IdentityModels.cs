@@ -2,7 +2,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
+using HortaApp.Domain;
 
 namespace HortaApp.Api.Models
 {
@@ -24,7 +25,9 @@ namespace HortaApp.Api.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
+        public DbSet<PerfilUsuario> PerfilUsuario { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(HortaApp.Api.Startup))]
+[assembly: OwinStartup("Api",typeof(HortaApp.Api.Startup))]
 
 namespace HortaApp.Api
 {

@@ -339,11 +339,7 @@ namespace HortaApp.Api.Controllers
 
             string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
 
-            var callbaqui = model.CallbackUrl + code;
-
-            var callbaqui2 = model.CallbackUrl + code;
-
-            await UserManager.SendEmailAsync(user.Id, "Confirmar sua conta", "Confirme sua conta clicando <a href=\"" + model.CallbackUrl + "?userId=" + user.Id + "&code=" + code + "\">aqui</a>");
+            await UserManager.SendEmailAsync(user.Id, "Confirme sua conta no HortaApp", "Para confirmar sua conta basta clicar no link <a href=\"" + model.CallbackUrl + "?userId=" + user.Id + "&code=" + code + "\">aqui</a>");
 
             return Ok(user);
         }

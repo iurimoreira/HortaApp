@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(HortaApp.Api.Startup))]
+[assembly: OwinStartup("Api",typeof(HortaApp.Api.Startup))]
 
 namespace HortaApp.Api
 {

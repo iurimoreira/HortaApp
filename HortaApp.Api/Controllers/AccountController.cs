@@ -334,10 +334,14 @@ namespace HortaApp.Api.Controllers
 
             if (!result.Succeeded)
             {
-                return GetErrorResult(result);
+                return BadRequest("Esse email já utilizado anteriormente.");
             }
 
-            return Ok();
+            string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+
+            await UserManager.SendEmailAsync(user.Id, "Confirme sua conta no HortaApp", "Para confirmar sua conta basta clicar no link <a href=\"" + model.CallbackUrl + "?userId=" + user.Id + "&code=" + code + "\">aqui</a>");
+
+            return Ok(user);
         }
 
         // POST api/Account/RegisterExternal

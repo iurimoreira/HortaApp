@@ -48,6 +48,8 @@ namespace HortaApp.Api.Models
         [Display(Name = "Confirmar senha")]
         [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não coincidem.")]
         public string ConfirmPassword { get; set; }
+
+        public string CallbackUrl { get; set; }
     }
 
     public class RegisterExternalBindingModel

@@ -116,3 +116,15 @@ C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\obj\Debug\HortaApp.Web
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\obj\Debug\HortaApp.Web.pdb
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\HortaApp.Domain.dll
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\HortaApp.Domain.pdb
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\HortaApp.Api.dll
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\System.Web.Http.dll
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\System.Web.Http.Owin.dll
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\HortaApp.Api.pdb
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\HortaApp.Api.dll.config
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\System.Web.Http.xml
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\System.Web.Http.Owin.xml
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\pt-br\System.Web.Http.resources.dll
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\pt-br\System.Web.Http.Owin.resources.dll
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\bin\pt-br\System.Web.Http.WebHost.resources.dll

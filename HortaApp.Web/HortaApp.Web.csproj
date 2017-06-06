@@ -283,6 +283,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HortaApp.Api\HortaApp.Api.csproj">
+      <Project>{ED0F32FA-904E-4629-89FB-89E71BE5498B}</Project>
+      <Name>HortaApp.Api</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HortaApp.Domain\HortaApp.Domain.csproj">
       <Project>{c7dfd29a-593e-410e-91f3-7cc7e90bc727}</Project>
       <Name>HortaApp.Domain</Name>

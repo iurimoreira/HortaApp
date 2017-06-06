@@ -9,7 +9,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HortaApp.Web.Models;
-using HortaApp.Web.Models.ViewModels;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
@@ -162,9 +161,10 @@ namespace HortaApp.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-               
-                var response = await _client.PostAsJsonAsync("api/Account/Register", model);
+                var callbackUrl = Url.Action("ConfirmEmail", "Account", null, protocol: Request.Url.Scheme);
+                model.CallbackUrl = callbackUrl;
 
+                var response = await _client.PostAsJsonAsync("api/Account/Register", model);
 
                 if (response.IsSuccessStatusCode)
                 {

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using HortaApp.Api.Models;
@@ -24,6 +21,7 @@ namespace HortaApp.Api.Controllers
         }
 
         // GET: api/PerfilUsuario/5
+        [Route("IdUsuario")]
         [ResponseType(typeof(PerfilUsuario))]
         public IHttpActionResult GetPerfilUsuario(int id)
         {
@@ -35,6 +33,9 @@ namespace HortaApp.Api.Controllers
 
             return Ok(perfilUsuario);
         }
+
+        
+        
 
         // PUT: api/PerfilUsuario/5
         [ResponseType(typeof(void))]
@@ -114,6 +115,20 @@ namespace HortaApp.Api.Controllers
         private bool PerfilUsuarioExists(int id)
         {
             return db.PerfilUsuario.Count(e => e.PerfilUsuarioId == id) > 0;
+        }
+
+        [Route("PerfilExiste")]
+        public IHttpActionResult Get(string id)
+        {
+
+            var perfil = db.PerfilUsuario.Where(a => a.Usuarioid == id);
+
+            if (perfil == null)
+            {
+                return BadRequest();
+
+            }
+            return Ok();
         }
     }
 }

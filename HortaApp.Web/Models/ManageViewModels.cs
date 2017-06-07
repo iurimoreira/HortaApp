@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace HortaApp.Web.Models.ViewModels
+namespace HortaApp.Web.Models
 {
     public class IndexViewModel
     {

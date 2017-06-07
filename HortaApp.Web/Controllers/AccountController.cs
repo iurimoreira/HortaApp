@@ -83,22 +83,38 @@ namespace HortaApp.Web.Controllers
                 return View(model);
             }
 
+            var usuario = UserManager.FindByEmail(model.Email);
+            Session["idUsuario"] = usuario.Id;
+            Session["EmailUsuario"] = usuario.Email;
+
+            var usuarioID = Session["idUsuario"].ToString();
+
+            var uriparameter = "api/PerfilUsuario/PerfilExiste?id=" + usuarioID;
+
+            var response = await _client.GetAsync(uriparameter);
+
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
+
+            if (response.IsSuccessStatusCode)
             {
-                case SignInStatus.Success:
-                    var usuario = UserManager.FindByEmail(model.Email);
-                    Session["idUsuario"] = usuario.Id;
-                    Session["EmailUsuario"] = usuario.Email;
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Tentativa de login inválida.");
-                    return View(model);
+                switch (result)
+                {
+                    case SignInStatus.Success:
+
+                        return RedirectToLocal(returnUrl);
+                    case SignInStatus.LockedOut:
+                        return View("Lockout");
+                    case SignInStatus.RequiresVerification:
+                        return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    case SignInStatus.Failure:
+                    default:
+                        ModelState.AddModelError("", "Tentativa de login inválida.");
+                        return View(model);
+                }
+            }
+            else
+            {
+                return RedirectToAction("Create", "PerfilUsuario");
             }
         }
 
@@ -168,7 +184,7 @@ namespace HortaApp.Web.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index", "Home"); 
+                    return RedirectToAction("Login", "Account"); 
                 }
                 else
                 {

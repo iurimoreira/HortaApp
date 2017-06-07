@@ -184,7 +184,8 @@ namespace HortaApp.Web.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Login", "Account"); 
+                    ViewBag.Message = "Uma mensagem de confirmação foi enviada para o seu email.";
+                    return View("Login"); 
                 }
                 else
                 {

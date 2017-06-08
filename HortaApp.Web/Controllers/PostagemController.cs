@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using HortaApp.Domain;
-using HortaApp.Web.Models;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using HortaApp.Web.Models.ViewModels;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace HortaApp.Web.Controllers
 {
@@ -31,8 +25,21 @@ namespace HortaApp.Web.Controllers
             _client.DefaultRequestHeaders.Accept.Add(mediaType);
         }
 
-        public ActionResult Index()
+        [Authorize]
+        public async Task<ActionResult> Index()
         {
+            var response = await _client.GetAsync("api/Postagem");
+            if (response.IsSuccessStatusCode)
+            {
+                var JsonString = await response.Content.ReadAsStringAsync();
+                ViewBag.Timeline = JsonConvert.DeserializeObject<List<PostagemViewModel>>(JsonString);
+
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -42,7 +49,7 @@ namespace HortaApp.Web.Controllers
         }
 
         [HttpPost]
-        //[Authorize]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(PostagemViewModel model)
         {

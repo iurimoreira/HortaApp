@@ -195,6 +195,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PerfilUsuarioController.cs" />
+    <Compile Include="Controllers\PostagemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +203,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\PerfilViewModel.cs" />
+    <Compile Include="Models\ViewModels\PostagemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmailService.cs" />
     <Compile Include="Startup.cs" />
@@ -266,6 +268,16 @@
     <Content Include="Views\PerfilUsuario\Create.cshtml" />
     <Content Include="Views\PerfilUsuario\Details.cshtml" />
     <Content Include="Views\PerfilUsuario\Edit.cshtml" />
+    <Content Include="Views\Postagems\Create.cshtml" />
+    <Content Include="Views\Postagems\Delete.cshtml" />
+    <Content Include="Views\Postagems\Details.cshtml" />
+    <Content Include="Views\Postagems\Edit.cshtml" />
+    <Content Include="Views\Postagems\Index.cshtml" />
+    <Content Include="Views\Postagem\Create.cshtml" />
+    <Content Include="Views\Postagem\Delete.cshtml" />
+    <Content Include="Views\Postagem\Details.cshtml" />
+    <Content Include="Views\Postagem\Edit.cshtml" />
+    <Content Include="Views\Postagem\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

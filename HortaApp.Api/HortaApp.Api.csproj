@@ -229,6 +229,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PerfilUsuarioController.cs" />
+    <Compile Include="Controllers\PostagemController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -240,6 +241,10 @@
     <Compile Include="Migrations\201706010242195_Add-Perfil.cs" />
     <Compile Include="Migrations\201706010242195_Add-Perfil.Designer.cs">
       <DependentUpon>201706010242195_Add-Perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706081318525_Add-Postagem.cs" />
+    <Compile Include="Migrations\201706081318525_Add-Postagem.Designer.cs">
+      <DependentUpon>201706081318525_Add-Postagem.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -339,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706010242195_Add-Perfil.resx">
       <DependentUpon>201706010242195_Add-Perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081318525_Add-Postagem.resx">
+      <DependentUpon>201706081318525_Add-Postagem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

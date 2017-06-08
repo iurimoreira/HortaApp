@@ -1,0 +1,33 @@
+﻿@model HortaApp.Web.Models.ViewModels.PerfilViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Html.DisplayFor(model => model.NomeUsuario)</h2>
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuarioid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuarioid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoPerfil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FotoPerfil)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Usuarioid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -4,7 +4,7 @@ namespace HortaApp.Web.Models.ViewModels
 {
     public class PerfilViewModel
     {
-        
+        [Key]
         [Display(Name = "Id")]
         public int PerfilUsuarioId { get; set; }
 

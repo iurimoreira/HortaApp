@@ -10,18 +10,20 @@ using HortaApp.Domain;
 
 namespace HortaApp.Api.Controllers
 {
+    [RoutePrefix("api/PerfilUsuario")]
     public class PerfilUsuarioController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/PerfilUsuario
+        [Route("PegarTodos")]
         public IQueryable<PerfilUsuario> GetPerfilUsuario()
         {
             return db.PerfilUsuario;
         }
 
         // GET: api/PerfilUsuario/5
-        [Route("IdUsuario")]
+        [Route("IdPerfilUsuario")]
         [ResponseType(typeof(PerfilUsuario))]
         public IHttpActionResult GetPerfilUsuario(int id)
         {
@@ -34,13 +36,22 @@ namespace HortaApp.Api.Controllers
             return Ok(perfilUsuario);
         }
 
-        
-        
 
-        // PUT: api/PerfilUsuario/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutPerfilUsuario(int id, PerfilUsuario perfilUsuario)
+        [Route("AtualizarPerfilUsuario")]
+        [ResponseType(typeof(PerfilUsuario))]
+        public IHttpActionResult AtualizarPerfilUsuario(PerfilUsuario perfilUsuario)
         {
+            return Ok();
+        }
+
+
+        /*
+        [Route("AtualizarPerfilUsuario")]
+        [ResponseType(typeof(PerfilUsuario))]
+        public IHttpActionResult AtualizarPerfilUsuario(PerfilUsuario perfilUsuario)
+        {
+            int id = perfilUsuario.PerfilUsuarioId;
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -71,8 +82,10 @@ namespace HortaApp.Api.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
+        */
 
-        // POST: api/PerfilUsuario
+            // POST: api/PerfilUsuario
+        [Route("CriarPerfilUsuario")]
         [ResponseType(typeof(PerfilUsuario))]
         public IHttpActionResult PostPerfilUsuario(PerfilUsuario perfilUsuario)
         {
@@ -87,6 +100,7 @@ namespace HortaApp.Api.Controllers
             return CreatedAtRoute("DefaultApi", new { id = perfilUsuario.PerfilUsuarioId }, perfilUsuario);
         }
 
+        /*
         // DELETE: api/PerfilUsuario/5
         [ResponseType(typeof(PerfilUsuario))]
         public IHttpActionResult DeletePerfilUsuario(int id)
@@ -102,7 +116,7 @@ namespace HortaApp.Api.Controllers
 
             return Ok(perfilUsuario);
         }
-
+        */
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -118,17 +132,19 @@ namespace HortaApp.Api.Controllers
         }
 
         [Route("PerfilExiste")]
+        [ResponseType(typeof(PerfilUsuario))]
         public IHttpActionResult Get(string id)
         {
 
             var perfil = db.PerfilUsuario.Where(a => a.Usuarioid == id);
 
-            if (perfil == null)
+            if (perfil.Count() == 0)
             {
                 return BadRequest();
 
             }
-            return Ok();
+            return Ok(perfil);
         }
+
     }
 }

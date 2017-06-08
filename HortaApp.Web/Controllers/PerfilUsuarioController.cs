@@ -1,5 +1,8 @@
-﻿using HortaApp.Web.Models.ViewModels;
+﻿using HortaApp.Domain;
+using HortaApp.Web.Models.ViewModels;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -30,9 +33,22 @@ namespace HortaApp.Web.Controllers
         }
 
         // GET: PerfilUsuario/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(string id)
         {
-            return View();
+            var uriparameter = "api/PerfilUsuario/PerfilExiste?id=" + id;
+            var response = await _client.GetAsync(uriparameter);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var JsonString = await response.Content.ReadAsStringAsync();
+                var perfilUsuario = JsonConvert.DeserializeObject<List<PerfilViewModel>>    (JsonString);
+
+                return View(perfilUsuario[0]);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         // GET: PerfilUsuario/Create
@@ -43,14 +59,14 @@ namespace HortaApp.Web.Controllers
 
         // POST: PerfilUsuario/Create
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(PerfilViewModel model)
         {
             model.Usuarioid = Session["idUsuario"].ToString();
             if (ModelState.IsValid)
             {
-                var response = await _client.PostAsJsonAsync("api/PerfilUsuario", model);
+                var response = await _client.PostAsJsonAsync("api/PerfilUsuario/CriarPerfilUsuario", model);
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -60,25 +76,33 @@ namespace HortaApp.Web.Controllers
         }
 
         // GET: PerfilUsuario/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(string id)
         {
-            return View();
+            var uriparameter = "api/PerfilUsuario/PerfilExiste?id=" + id;
+            var response = await _client.GetAsync(uriparameter);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var JsonString = await response.Content.ReadAsStringAsync();
+                var perfilUsuario = JsonConvert.DeserializeObject<List<PerfilViewModel>>(JsonString);
+
+                return View(perfilUsuario[0]);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         // POST: PerfilUsuario/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public async Task<ActionResult> Edit(PerfilViewModel model)
         {
-            try
-            {
-                // TODO: Add update logic here
+           
+                var response = await _client.PostAsJsonAsync("api/PerfilUsuario/AtualizarPerfilUsuario", model);
 
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+           
         }
 
         // GET: PerfilUsuario/Delete/5

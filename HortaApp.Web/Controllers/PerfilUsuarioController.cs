@@ -98,11 +98,9 @@ namespace HortaApp.Web.Controllers
         [HttpPost]
         public async Task<ActionResult> Edit(PerfilViewModel model)
         {
-           
-                var response = await _client.PostAsJsonAsync("api/PerfilUsuario/AtualizarPerfilUsuario", model);
+            var response = await _client.PostAsJsonAsync("api/PerfilUsuario/AtualizarPerfilUsuario", model);
 
-                return RedirectToAction("Index");
-           
+            return RedirectToAction("Details", "PerfilUsuario", new { id = model.Usuarioid });
         }
 
         // GET: PerfilUsuario/Delete/5

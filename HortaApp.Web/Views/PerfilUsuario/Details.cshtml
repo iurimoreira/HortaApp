@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Details";
 }
-
+<span>@ViewBag.Message</span>
 <h2>@Html.DisplayFor(model => model.NomeUsuario)</h2>
 
 <div>
@@ -28,6 +28,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Usuarioid }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Usuarioid }) |
+    @Html.ActionLink("Alterar sua senha", "ChangePassword","Manage")
 </p>

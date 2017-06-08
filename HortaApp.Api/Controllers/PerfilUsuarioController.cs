@@ -36,16 +36,6 @@ namespace HortaApp.Api.Controllers
             return Ok(perfilUsuario);
         }
 
-
-        [Route("AtualizarPerfilUsuario")]
-        [ResponseType(typeof(PerfilUsuario))]
-        public IHttpActionResult AtualizarPerfilUsuario(PerfilUsuario perfilUsuario)
-        {
-            return Ok();
-        }
-
-
-        /*
         [Route("AtualizarPerfilUsuario")]
         [ResponseType(typeof(PerfilUsuario))]
         public IHttpActionResult AtualizarPerfilUsuario(PerfilUsuario perfilUsuario)
@@ -82,9 +72,9 @@ namespace HortaApp.Api.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-        */
 
-            // POST: api/PerfilUsuario
+
+        // POST: api/PerfilUsuario
         [Route("CriarPerfilUsuario")]
         [ResponseType(typeof(PerfilUsuario))]
         public IHttpActionResult PostPerfilUsuario(PerfilUsuario perfilUsuario)
@@ -135,16 +125,13 @@ namespace HortaApp.Api.Controllers
         [ResponseType(typeof(PerfilUsuario))]
         public IHttpActionResult Get(string id)
         {
-
             var perfil = db.PerfilUsuario.Where(a => a.Usuarioid == id);
 
             if (perfil.Count() == 0)
             {
                 return BadRequest();
-
             }
             return Ok(perfil);
         }
-
     }
 }

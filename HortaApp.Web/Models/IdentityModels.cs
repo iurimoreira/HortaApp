@@ -31,5 +31,7 @@ namespace HortaApp.Web.Models
         }
 
         public System.Data.Entity.DbSet<HortaApp.Domain.PerfilUsuario> PerfilUsuarios { get; set; }
+
+        public System.Data.Entity.DbSet<HortaApp.Domain.Postagem> Postagems { get; set; }
     }
 }

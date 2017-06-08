@@ -2,3 +2,4 @@ C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Domain\bin\Debug\HortaApp.
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Domain\bin\Debug\HortaApp.Domain.pdb
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Domain\obj\Debug\HortaApp.Domain.dll
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Domain\obj\Debug\HortaApp.Domain.pdb
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Domain\obj\Debug\HortaApp.Domain.csprojResolveAssemblyReference.cache

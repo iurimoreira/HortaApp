@@ -28,6 +28,8 @@ namespace HortaApp.Api.Models
 
         public DbSet<PerfilUsuario> PerfilUsuario { get; set; }
 
+        public DbSet<Postagem> Postagem { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

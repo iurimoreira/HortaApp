@@ -129,3 +129,5 @@ C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.dll
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.pdb
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.Migrations.AddPostagem.resources
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.Migrations.PostsTable.resources
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.Migrations.AutorPostagem.resources

@@ -246,6 +246,14 @@
     <Compile Include="Migrations\201706081318525_Add-Postagem.Designer.cs">
       <DependentUpon>201706081318525_Add-Postagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706082331305_Posts-Table.cs" />
+    <Compile Include="Migrations\201706082331305_Posts-Table.Designer.cs">
+      <DependentUpon>201706082331305_Posts-Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706090041389_Autor-Postagem.cs" />
+    <Compile Include="Migrations\201706090041389_Autor-Postagem.Designer.cs">
+      <DependentUpon>201706090041389_Autor-Postagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -347,6 +355,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706081318525_Add-Postagem.resx">
       <DependentUpon>201706081318525_Add-Postagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706082331305_Posts-Table.resx">
+      <DependentUpon>201706082331305_Posts-Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706090041389_Autor-Postagem.resx">
+      <DependentUpon>201706090041389_Autor-Postagem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

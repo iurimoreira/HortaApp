@@ -8,6 +8,10 @@ namespace HortaApp.Domain
 
         public string Usuarioid { get; set; }
 
+        //public string NomePerfilUsuario { get; set; }
+
+        public string AutorPostagem { get; set; }
+
         public string Conteudo { get; set; }
 
         public string FotoPostagem { get; set; }

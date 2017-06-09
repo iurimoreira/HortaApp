@@ -13,6 +13,7 @@
     @foreach (var postagem in ViewBag.Timeline)
     {
         <div class="box-livro">
+            <p class="p-titulo"><strong>Autor:</strong> @postagem.AutorPostagem</p>
             <p class="p-titulo"><strong>Conteúdo:</strong> @postagem.Conteudo</p>
             <p class="p-isbn"><strong>Foto:</strong> @postagem.FotoPostagem</p>
 

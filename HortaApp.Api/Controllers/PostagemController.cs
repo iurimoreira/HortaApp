@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using HortaApp.Api.Models;
@@ -20,7 +16,7 @@ namespace HortaApp.Api.Controllers
         // GET: api/Postagem
         public IQueryable<Postagem> GetPostagem()
         {
-            return db.Postagem;
+            return db.Postagem.OrderByDescending(p=>p.PostagemId);
         }
 
         // GET: api/Postagem/5

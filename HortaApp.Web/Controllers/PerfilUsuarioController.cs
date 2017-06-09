@@ -12,8 +12,6 @@ namespace HortaApp.Web.Controllers
 {
     public class PerfilUsuarioController : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
         private HttpClient _client;
 
         public PerfilUsuarioController()

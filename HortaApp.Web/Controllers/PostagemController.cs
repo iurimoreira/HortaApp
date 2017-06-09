@@ -11,8 +11,6 @@ namespace HortaApp.Web.Controllers
 {
     public class PostagemController : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
         private HttpClient _client;
 
         public PostagemController()
@@ -40,7 +38,6 @@ namespace HortaApp.Web.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            return View();
         }
 
         public ActionResult Create()
@@ -54,6 +51,14 @@ namespace HortaApp.Web.Controllers
         public async Task<ActionResult> Create(PostagemViewModel model)
         {
             model.Usuarioid = Session["idUsuario"].ToString();
+
+            var uriparameter = "api/PerfilUsuario/PerfilExiste?id=" + model.Usuarioid;
+            var responsePerfil = await _client.GetAsync(uriparameter);
+            var JsonString = await responsePerfil.Content.ReadAsStringAsync();
+            var perfilUsuario = JsonConvert.DeserializeObject<List<PerfilViewModel>>(JsonString);
+
+            model.AutorPostagem = perfilUsuario[0].NomeUsuario;
+
             if (ModelState.IsValid)
             {
                 var response = await _client.PostAsJsonAsync("api/Postagem", model);

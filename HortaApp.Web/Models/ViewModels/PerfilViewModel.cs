@@ -16,7 +16,6 @@ namespace HortaApp.Web.Models.ViewModels
         [Display(Name = "Nome do usuário")]
         public string NomeUsuario { get; set; }
 
-        [Required]
         [Display(Name = "Foto de perfil")]
         public string FotoPerfil { get; set; }
     }

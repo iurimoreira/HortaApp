@@ -1,11 +1,13 @@
 ﻿using HortaApp.Domain;
 using HortaApp.Web.Models.ViewModels;
+using HortaApp.Web.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace HortaApp.Web.Controllers
@@ -23,6 +25,8 @@ namespace HortaApp.Web.Controllers
             var mediaType = new MediaTypeWithQualityHeaderValue("application/json");
             _client.DefaultRequestHeaders.Accept.Add(mediaType);
         }
+
+        ImageService imageService = new ImageService();
 
         // GET: PerfilUsuario
         public ActionResult Index()
@@ -59,9 +63,19 @@ namespace HortaApp.Web.Controllers
         [HttpPost]
         //[Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(PerfilViewModel model)
+        public async Task<ActionResult> Create(PerfilViewModel model, HttpPostedFileBase imagem)
         {
+            var imagemUrl = await imageService.UploadImageAsync(imagem);
+
+            //Salva a imagem como Blob
+            ImagemController imagemController = new ImagemController();
+            imagemController.ControllerContext = new ControllerContext(this.Request.RequestContext, imagemController);
+            imagemController.Upload(imagemUrl);
+
+            //Depois armazena as informações da imagem em uma tabela no banco de dados
+            model.FotoPerfil = imagemUrl.ToString();
             model.Usuarioid = Session["idUsuario"].ToString();
+
             if (ModelState.IsValid)
             {
                 var response = await _client.PostAsJsonAsync("api/PerfilUsuario/CriarPerfilUsuario", model);

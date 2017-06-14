@@ -36,20 +36,20 @@ namespace HortaApp.Web.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Upload(HttpPostedFileBase photo)
+        //[HttpPost]
+        public async void Upload(string imagemUrl)
         {
-            var imageUrl = await imageService.UploadImageAsync(photo);
+            //var imageUrl = await imageService.UploadImageAsync(photo);
 
             ImagemViewModel imagem = new ImagemViewModel();
 
             imagem.UsuarioId = Session["idUsuario"].ToString();
             imagem.EmailUsuario = Session["EmailUsuario"].ToString();
-            imagem.UrlImagem = imageUrl.ToString();
+            imagem.UrlImagem = imagemUrl;
 
             var response = await _client.PostAsJsonAsync("api/Imagem", imagem);
 
-            return RedirectToAction("Index", "Home");
+            //return RedirectToAction("Index", "Home");
         }
     }
 }

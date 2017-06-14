@@ -1,0 +1,35 @@
+﻿@model HortaApp.Web.Models.ViewModels.ImagemViewModel
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload</h2>
+
+@using (Html.BeginForm("Upload", "Imagem", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <fieldset class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Photo">Imagem</label>
+            <div class="col-md-10">
+                <input type="file" name="photo" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Conteudo">Conteudo</label>
+            <div class="col-md-10">
+                <input type="text" name="Conteudo" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn" />
+            </div>
+        </div>
+    </fieldset>
+
+}  
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

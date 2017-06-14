@@ -110,4 +110,3 @@ C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\Teste\bin\pt-br\Microsoft.Owin.Secu
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\Teste\bin\pt-br\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\Teste\obj\Debug\Teste.dll
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\Teste\obj\Debug\Teste.pdb
-C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\Teste\obj\Debug\Teste.csprojResolveAssemblyReference.cache

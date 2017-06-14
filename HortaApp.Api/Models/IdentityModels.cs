@@ -30,6 +30,8 @@ namespace HortaApp.Api.Models
 
         public DbSet<Postagem> Postagem { get; set; }
 
+        public DbSet<Imagem> Imagem { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

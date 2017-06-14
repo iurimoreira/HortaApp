@@ -1,4 +1,5 @@
-﻿using HortaApp.Web.Services;
+﻿using HortaApp.Web.Models.ViewModels;
+using HortaApp.Web.Services;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -40,19 +41,15 @@ namespace HortaApp.Web.Controllers
         {
             var imageUrl = await imageService.UploadImageAsync(photo);
 
+            ImagemViewModel imagem = new ImagemViewModel();
 
-            var idusuario = Session["idUsuario"].ToString();
-            var emailUsuario = Session["EmailUsuario"].ToString();
-            var foto = imageUrl.ToString();
+            imagem.UsuarioId = Session["idUsuario"].ToString();
+            imagem.EmailUsuario = Session["EmailUsuario"].ToString();
+            imagem.UrlImagem = imageUrl.ToString();
 
-            var uri = "api/Imagems/Create?idUsuario=" + idusuario + "&emailUsuario=" + emailUsuario + "&foto=" + foto;
+            var response = await _client.PostAsJsonAsync("api/Imagem", imagem);
 
-            var response = await _client.GetAsync(uri);
-
-
-
-
-            return RedirectToAction("LatestImage");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

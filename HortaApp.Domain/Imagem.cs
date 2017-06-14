@@ -11,6 +11,6 @@ namespace HortaApp.Domain
 
         public string EmailUsuario { get; set; }
 
-        public string NomeImagem { get; set; }
+        public string UrlImagem { get; set; }
     }
 }

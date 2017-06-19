@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using HortaApp.Web.Models.ViewModels;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Web;
+using HortaApp.Web.Services;
 
 namespace HortaApp.Web.Controllers
 {
     public class PostagemController : Controller
     {
         private HttpClient _client;
+        ImageService imageService = new ImageService();
 
         public PostagemController()
         {
@@ -48,7 +51,7 @@ namespace HortaApp.Web.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(PostagemViewModel model)
+        public async Task<ActionResult> Create(PostagemViewModel model, HttpPostedFileBase imagem)
         {
             model.Usuarioid = Session["idUsuario"].ToString();
 
@@ -59,10 +62,27 @@ namespace HortaApp.Web.Controllers
 
             model.AutorPostagem = perfilUsuario[0].NomeUsuario;
 
+            //Verifica se o usuário adicionou uma imagem a postagem ou não
+            if (imagem == null)
+            {
+                model.FotoPostagem = "Sem imagem";
+            }
+            else
+            { 
+                var imagemUrl = await imageService.UploadImageAsync(imagem);
+
+                //Salva a imagem como Blob
+                ImagemController imagemController = new ImagemController();
+                imagemController.ControllerContext = new ControllerContext(this.Request.RequestContext, imagemController);
+                imagemController.Upload(imagemUrl);
+
+                model.FotoPostagem = imagemUrl.ToString();
+            }
+
             if (ModelState.IsValid)
             {
                 var response = await _client.PostAsJsonAsync("api/Postagem", model);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Postagem");
             }
             else
             {

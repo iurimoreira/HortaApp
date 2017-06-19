@@ -295,11 +295,6 @@
     <Content Include="Views\PerfilUsuario\Create.cshtml" />
     <Content Include="Views\PerfilUsuario\Details.cshtml" />
     <Content Include="Views\PerfilUsuario\Edit.cshtml" />
-    <Content Include="Views\Postagems\Create.cshtml" />
-    <Content Include="Views\Postagems\Delete.cshtml" />
-    <Content Include="Views\Postagems\Details.cshtml" />
-    <Content Include="Views\Postagems\Edit.cshtml" />
-    <Content Include="Views\Postagems\Index.cshtml" />
     <Content Include="Views\Postagem\Create.cshtml" />
     <Content Include="Views\Postagem\Delete.cshtml" />
     <Content Include="Views\Postagem\Details.cshtml" />

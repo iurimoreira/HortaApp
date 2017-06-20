@@ -1,5 +1,4 @@
-﻿using HortaApp.Domain;
-using HortaApp.Web.Models.ViewModels;
+﻿using HortaApp.Web.Models.ViewModels;
 using HortaApp.Web.Services;
 using Newtonsoft.Json;
 using System;
@@ -15,6 +14,7 @@ namespace HortaApp.Web.Controllers
     public class PerfilUsuarioController : Controller
     {
         private HttpClient _client;
+        ImageService imageService = new ImageService();
 
         public PerfilUsuarioController()
         {
@@ -25,9 +25,7 @@ namespace HortaApp.Web.Controllers
             var mediaType = new MediaTypeWithQualityHeaderValue("application/json");
             _client.DefaultRequestHeaders.Accept.Add(mediaType);
         }
-
-        ImageService imageService = new ImageService();
-
+       
         // GET: PerfilUsuario
         public ActionResult Index()
         {
@@ -67,12 +65,12 @@ namespace HortaApp.Web.Controllers
         {
             var imagemUrl = await imageService.UploadImageAsync(imagem);
 
-            //Salva a imagem como Blob
+            //Salva a imagem do perfil como Blob
             ImagemController imagemController = new ImagemController();
             imagemController.ControllerContext = new ControllerContext(this.Request.RequestContext, imagemController);
             imagemController.Upload(imagemUrl);
 
-            //Depois armazena as informações da imagem em uma tabela no banco de dados
+            //Depois armazena as informações da imagem do perfil em uma tabela no banco de dados
             model.FotoPerfil = imagemUrl.ToString();
             model.Usuarioid = Session["idUsuario"].ToString();
 

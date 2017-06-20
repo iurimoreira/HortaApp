@@ -238,6 +238,13 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\hortaapp.webflow.css" />
+    <Content Include="Content\Imagens\close_icon_white.svg" />
+    <Content Include="Content\Imagens\img-home-hero-background-p-500.png" />
+    <Content Include="Content\Imagens\img-home-hero-background-p-800.png" />
+    <Content Include="Content\Imagens\img-home-hero-background.png" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\webflow.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -258,6 +265,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\webflow.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -278,8 +286,8 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login_2.cshtml" />
+    <Content Include="Views\Account\Register_2.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
@@ -301,6 +309,8 @@
     <Content Include="Views\Postagem\Edit.cshtml" />
     <Content Include="Views\Postagem\Index.cshtml" />
     <Content Include="Views\Imagem\Upload.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

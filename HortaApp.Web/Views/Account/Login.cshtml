@@ -50,27 +50,26 @@
     <div class="destaque-full-height">
         <div class="header w-clearfix">
 
-            @if (ViewBag.Message != null)
-            {
-                <div class="box-mensagem" data-ix="box-mensagem">
-                    <img class="bt-fechar-box-mensagem" data-ix="fechar-box-mensagem" src="@Url.Content("~/Content/Imagens/close_icon_white.svg")" width="20" />
-                    <div>@ViewBag.Message</div>
-                </div>
-            }
-            
-            <h1 class="logo-homegrown">homegrown</h1>
-            <ul class="menu-principal w-list-unstyled">
-                <li class="item-menu-principal">
-
-                    <div class="link-block w-inline-block" href="nova-conta.html">
-                        <p class="link-item-menu-principal" style = "color:#3d6ce6;">@Html.ActionLink("criar conta", "Register")</p>
-                        <!--<div class="link-item-menu-principal">criar conta</div>-->
+                @if (ViewBag.Message != null)
+                {
+                    <div class="box-mensagem" data-ix="box-mensagem">
+                        <img class="bt-fechar-box-mensagem" data-ix="fechar-box-mensagem" src="@Url.Content("~/Content/Imagens/close_icon_white.svg")" width="20" />
+                        <div>@ViewBag.Message</div>
                     </div>
-                </li>
-            </ul>
-        </div>
+                }
+                <img src="@Url.Content("~/Content/Imagens/logo-homegrown.svg")" width="240">
+                <ul class="menu-principal w-list-unstyled">
+                    <li class="item-menu-principal">
+
+                        <div class="link-block w-inline-block" href="nova-conta.html">
+                            <p class="link-item-menu-principal" style="color:#3d6ce6;">@Html.ActionLink("criar conta", "Register")</p>
+                            <!--<div class="link-item-menu-principal">criar conta</div>-->
+                        </div>
+                    </li>
+                </ul>
+            </div>
         <div class="home-destaque-wrapper">
-            <h1 class="home-headline">Compartilhe a sua<br>horta com o mundo</h1>
+            <h1 class="home-headline">Compartilhe fotos da <br>sua horta com o mundo</h1>
             <div class="form-login-wrapper w-form">
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-login", role = "form" }))
                 {

@@ -101,7 +101,7 @@ namespace HortaApp.Web.Controllers
                 {
                     case SignInStatus.Success:
 
-                        return RedirectToLocal(returnUrl);
+                        return RedirectToAction("Index", "Postagem");
                     case SignInStatus.LockedOut:
                         return View("Lockout");
                     case SignInStatus.RequiresVerification:

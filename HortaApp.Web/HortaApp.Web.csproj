@@ -240,9 +240,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\hortaapp.webflow.css" />
     <Content Include="Content\Imagens\close_icon_white.svg" />
+    <Content Include="Content\Imagens\icon-curtiu.svg" />
     <Content Include="Content\Imagens\img-home-hero-background-p-500.png" />
     <Content Include="Content\Imagens\img-home-hero-background-p-800.png" />
     <Content Include="Content\Imagens\img-home-hero-background.png" />
+    <Content Include="Content\Imagens\img-perfil.jpg" />
+    <Content Include="Content\Imagens\img-timeline.jpg" />
+    <Content Include="Content\Imagens\logo-homegrown-branco.svg" />
+    <Content Include="Content\Imagens\logo-homegrown.svg" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\webflow.css" />
     <Content Include="favicon.ico" />
@@ -307,10 +312,13 @@
     <Content Include="Views\Postagem\Delete.cshtml" />
     <Content Include="Views\Postagem\Details.cshtml" />
     <Content Include="Views\Postagem\Edit.cshtml" />
-    <Content Include="Views\Postagem\Index.cshtml" />
+    <Content Include="Views\Postagem\Index_2.cshtml" />
     <Content Include="Views\Imagem\Upload.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Postagem\Index.cshtml" />
+    <Content Include="Views\Postagem\_HeaderPartial.cshtml" />
+    <Content Include="Views\Postagem\_PostagemPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

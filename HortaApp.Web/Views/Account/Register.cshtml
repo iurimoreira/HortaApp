@@ -47,8 +47,8 @@
 </head>
 <body>
     <div class="centralizar-elementos destaque-full-height">
-        <div class="box-formulario">
-            <h1 class="logo-centro-topo logo-homegrown">homegrown</h1>
+        <div class="box-branco box-formulario">
+            <img class="logo-box-formulario" src="@Url.Content("~/Content/Imagens/logo-homegrown.svg")" width="200">
             <div class="w-form">
                 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {

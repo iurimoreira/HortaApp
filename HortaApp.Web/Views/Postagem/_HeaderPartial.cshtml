@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <ul class="menu-principal w-list-unstyled">
+            <li class="item-menu-principal">
+                <a class="link-block w-inline-block" href="@Url.Action("Details","PerfilUsuario",new {id = User.Identity.GetUserId()})">
+                    <div class="link-item-menu-interno">Olá @Html.Raw(User.Identity.GetUserName()).ToString()</div>
+                </a>
+                @*
+                    @Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "Details", "PerfilUsuario", routeValues: null, htmlAttributes: new { id = User.Identity.GetUserId() })-->
+                *@
+            </li>
+            <li class="item-menu-principal">
+                <a class="link-block w-inline-block" href="javascript:document.getElementById('logoutForm').submit()">
+                    <div class="link-item-menu-interno">Sair</div>
+                </a>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="menu-principal w-list-unstyled">
+        <li class="item-menu-principal">
+            <a class="link-block w-inline-block" href="@Url.Action("Register", "Account", routeValues: null)">
+                <div class="link-item-menu-interno">Criar conta</div>
+            </a>
+        </li>
+        <li class="item-menu-principal">
+            <a class="link-block w-inline-block" href="@Url.Action("Login", "Account", routeValues: null)">
+                <div class="link-item-menu-interno">Entrar</div>
+            </a>
+        </li>
+    </ul>
+}

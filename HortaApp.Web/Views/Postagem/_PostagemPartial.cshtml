@@ -1,0 +1,30 @@
+﻿@model HortaApp.Web.Models.ViewModels.PostagemViewModel
+@using (Html.BeginForm("Create", "Postagem", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="box-branco box-fazer-post">
+        <div class="form-postagem w-form w-clearfix">
+            <!--
+            <form class="w-clearfix" data-name="Email Form" id="email-form" name="email-form">
+                <input class="campo-postagem w-input" data-name="Postagem" id="Postagem" maxlength="256" name="Postagem" placeholder="Faça um post sobre a sua horta" type="text">
+                <input class="bt-area-postagem bt-principal w-button" data-wait="Aguardando..." type="submit" value="Postar">
+                <input class="bt-area-postagem bt-imagem-postagem bt-principal w-button" data-wait="Aguardando..." type="submit" value="Imagem">
+            </form>
+            -->
+            @Html.TextBoxFor(model => model.Conteudo, null, new { @class = "campo-postagem w-input", Value = "Faça um post sobre a sua horta", onclick = "if(this.value  == 'Faça um post sobre a sua horta') { this.value = ''; } ", onblur = "if(this.value == ''){this.value ='Faça um post sobre a sua horta'}" })
+            <input class="bt-area-postagem bt-principal w-button" data-wait="Aguardando..." type="submit" value="Postar">
+            <input id="file" name="imagem" class="input-file" data-wait="Aguardando..." type="file" data-multiple-caption="{count} files selected" multiple>
+            <label class="bt-area-postagem bt-imagem-postagem bt-principal w-button" for="file"><span>Imagem</span></label>
+            
+
+
+            <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form</div>
+            </div>
+        </div>
+    </div>
+    <div class="divisao"></div>
+}

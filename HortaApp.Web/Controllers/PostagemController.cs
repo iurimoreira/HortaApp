@@ -26,7 +26,7 @@ namespace HortaApp.Web.Controllers
             _client.DefaultRequestHeaders.Accept.Add(mediaType);
         }
 
-        [Authorize]
+        [AllowAnonymous]
         public async Task<ActionResult> Index()
         {
             var response = await _client.GetAsync("api/Postagem");

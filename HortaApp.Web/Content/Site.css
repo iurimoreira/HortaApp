@@ -7,3 +7,21 @@ a {
         text-decoration: none !important;
         color: #3d6ce6 !important;
     }
+
+.item-menu-principal:first-child{
+    margin-right:2em;
+}
+
+#logoutForm{
+    display:inline;
+}
+
+.input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+

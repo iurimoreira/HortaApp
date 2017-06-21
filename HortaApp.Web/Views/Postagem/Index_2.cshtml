@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div>
+    <a class="bt-novo-livro" href="@Url.Action("Create","Postagem")"> Adicionar novo post </a>
+    <br /> <br />
+    <h2 class="titulo-lista"> Timeline </h2>
+
+
+    @foreach (var postagem in ViewBag.Timeline)
+    {
+        <div class="box-livro">
+            <p class="p-titulo"><strong>Autor:</strong> @postagem.AutorPostagem</p>
+            <p class="p-titulo"><strong>Conteúdo:</strong> @postagem.Conteudo</p>
+            @if(postagem.FotoPostagem!="Sem imagem")
+            {
+                <img src="@postagem.FotoPostagem" />
+            }
+           
+
+        </div>
+    }
+
+</div>

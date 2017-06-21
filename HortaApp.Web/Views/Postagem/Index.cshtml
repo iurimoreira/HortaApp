@@ -89,7 +89,19 @@
                         </div>
                         <div class="coluna-info-autor w-clearfix w-col w-col-10">
                             <div class="post-nome-autor">@postagem.AutorPostagem</div>
-                            <div class="link-perfil-autor-post">ver perfil</div><img class="bt-curtiu" src="@Url.Content("~/Content/Imagens/icon-curtiu.svg")">
+                            <div class="link-perfil-autor-post">
+                                @Html.ActionLink(
+                                    linkText: "ver perfil",
+                                    actionName: "Details",
+                                    controllerName: "PerfilUsuario",
+                                    routeValues: new
+                                    {
+                                        id = postagem.Usuarioid
+                                    },
+                                    htmlAttributes: null
+                                )       
+                            </div>
+                            <img class="bt-curtiu" src="@Url.Content("~/Content/Imagens/icon-curtiu.svg")">
                         </div>
                     </div>
                     <p class="post-paragraph">@postagem.Conteudo</p>

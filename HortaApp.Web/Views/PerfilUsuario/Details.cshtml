@@ -28,6 +28,19 @@
 
     </dl>
 </div>
+@foreach (var postagem in ViewBag.listaPostagens)
+{
+    <div class="box-livro">
+        <p class="p-titulo"><strong>Autor:</strong> @postagem.AutorPostagem</p>
+        <p class="p-titulo"><strong>Conteúdo:</strong> @postagem.Conteudo</p>
+        @if (postagem.FotoPostagem != "Sem imagem")
+        {
+            <img src="@postagem.FotoPostagem" />
+        }
+
+
+    </div>
+}
 <p>
     @Html.ActionLink("Editar", "Edit", new { id = Model.Usuarioid }) |
     @Html.ActionLink("Alterar sua senha", "ChangePassword","Manage")

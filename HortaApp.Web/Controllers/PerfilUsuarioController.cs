@@ -15,6 +15,7 @@ namespace HortaApp.Web.Controllers
     {
         private HttpClient _client;
         ImageService imageService = new ImageService();
+        PostagemController postagemService = new PostagemController();
 
         public PerfilUsuarioController()
         {
@@ -37,6 +38,8 @@ namespace HortaApp.Web.Controllers
         {
             var uriparameter = "api/PerfilUsuario/PerfilExiste?id=" + id;
             var response = await _client.GetAsync(uriparameter);
+           var lista = postagemService.PegarPostagens(id);
+            ViewBag.listaPostagens =  await Task.Run(() => lista.Result); 
 
             if (response.IsSuccessStatusCode)
             {

@@ -21,15 +21,15 @@ namespace HortaApp.Api.Controllers
 
         // GET: api/Postagem/5
         [ResponseType(typeof(Postagem))]
-        public IHttpActionResult GetPostagem(int id)
+        public IHttpActionResult GetPostagens(string id)
         {
-            Postagem postagem = db.Postagem.Find(id);
-            if (postagem == null)
+            var postagens = db.Postagem.Where(e => e.Usuarioid == id);
+            if (postagens == null)
             {
                 return NotFound();
             }
 
-            return Ok(postagem);
+            return Ok(postagens);
         }
 
         // PUT: api/Postagem/5

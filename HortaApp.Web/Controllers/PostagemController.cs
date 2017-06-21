@@ -90,5 +90,23 @@ namespace HortaApp.Web.Controllers
                 return View();
             }
         }
+
+        [AllowAnonymous]
+        public async Task<List<PostagemViewModel>> PegarPostagens(string id)
+        {
+            List<PostagemViewModel> listaPostagens = new List<PostagemViewModel>();
+            var response = await _client.GetAsync("api/Postagem?id="+id);
+            if (response.IsSuccessStatusCode)
+            {
+                var JsonString = await response.Content.ReadAsStringAsync();
+                listaPostagens = JsonConvert.DeserializeObject<List<PostagemViewModel>>(JsonString);
+
+                return listaPostagens;
+            }
+            else
+            {
+                return listaPostagens;
+            }
+        }
     }
 }

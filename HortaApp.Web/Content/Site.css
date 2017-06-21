@@ -25,3 +25,6 @@ a {
     z-index: -1;
 }
 
+.box-mensagem {
+    max-width: 35em;
+}

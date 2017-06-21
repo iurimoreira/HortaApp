@@ -12,6 +12,8 @@ namespace HortaApp.Domain
 
         public string AutorPostagem { get; set; }
 
+        public string FotoAutorPostagem { get; set; }
+
         public string Conteudo { get; set; }
 
         public string FotoPostagem { get; set; }

@@ -18,6 +18,13 @@
     background-size: auto, 100%;
     background-repeat: repeat, no-repeat;
 }
+.lista-posts {
+    opacity: 0;
+    -webkit-transform: translate(0px, 50px);
+    -ms-transform: translate(0px, 50px);
+    transform: translate(0px, 50px);
+}
+
 
     .destaque-full-height.centralizar-elementos {
         display: -webkit-box;

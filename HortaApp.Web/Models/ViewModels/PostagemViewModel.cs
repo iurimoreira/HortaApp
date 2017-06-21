@@ -18,6 +18,9 @@ namespace HortaApp.Web.Models.ViewModels
         [Display(Name = "Autor")]
         public string AutorPostagem { get; set; }
 
+        [Display(Name = "Foto autor")]
+        public string FotoAutorPostagem { get; set; }
+
         [Display(Name = "Adicionar imagem")]
         public string FotoPostagem { get; set; }
     }

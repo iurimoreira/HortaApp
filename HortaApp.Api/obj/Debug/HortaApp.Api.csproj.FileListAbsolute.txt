@@ -133,3 +133,4 @@ C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.Migrations.AutorPostagem.resources
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.Migrations.AddImage.resources
 C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.Migrations.ChangetoUrlImagem.resources
+C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Api\obj\Debug\HortaApp.Api.Migrations.FotoAutorPostagem.resources

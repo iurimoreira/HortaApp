@@ -87,7 +87,7 @@ namespace HortaApp.Web.Controllers
 
         // GET: PerfilUsuario/Edit/5
         public async Task<ActionResult> Edit(string id)
-        {
+        {           
             var uriparameter = "api/PerfilUsuario/PerfilExiste?id=" + id;
             var response = await _client.GetAsync(uriparameter);
 
@@ -100,14 +100,23 @@ namespace HortaApp.Web.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Postagem");
             }
         }
 
         // POST: PerfilUsuario/Edit/5
         [HttpPost]
-        public async Task<ActionResult> Edit(PerfilViewModel model)
+        public async Task<ActionResult> Edit(PerfilViewModel model, HttpPostedFileBase imagem)
         {
+            var imagemUrl = await imageService.UploadImageAsync(imagem);
+
+            //Salva a imagem do perfil como Blob
+            ImagemController imagemController = new ImagemController();
+            imagemController.ControllerContext = new ControllerContext(this.Request.RequestContext, imagemController);
+            imagemController.Upload(imagemUrl);
+
+            model.FotoPerfil = imagemUrl.ToString();
+
             var response = await _client.PostAsJsonAsync("api/PerfilUsuario/AtualizarPerfilUsuario", model);
 
             return RedirectToAction("Details", "PerfilUsuario", new { id = model.Usuarioid });

@@ -61,6 +61,7 @@ namespace HortaApp.Web.Controllers
             var perfilUsuario = JsonConvert.DeserializeObject<List<PerfilViewModel>>(JsonString);
 
             model.AutorPostagem = perfilUsuario[0].NomeUsuario;
+            model.FotoAutorPostagem = perfilUsuario[0].FotoPerfil;
 
             //Verifica se o usuário adicionou uma imagem a postagem ou não
             if (imagem == null)

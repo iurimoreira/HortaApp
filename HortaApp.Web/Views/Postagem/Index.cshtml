@@ -36,7 +36,7 @@
 <body>
     <header class="header header-interno w-clearfix">
         <img class="image" src="@Url.Content("~/Content/Imagens/logo-homegrown-branco.svg")" width="160">
-        @Html.Partial("_HeaderPartial")
+        @Html.Partial("~/Views/Shared/_HeaderPartial.cshtml")
         <!--
             <ul class="menu-principal w-list-unstyled">
                 <li class="item-menu-principal">
@@ -54,7 +54,10 @@
         -->
     </header>
     <main class="main">
-        @Html.Partial("_PostagemPartial")
+        @if (Request.IsAuthenticated)
+        {
+            @Html.Partial("_PostagemPartial")
+        }
         <!--
         <div class="box-branco box-fazer-post">
             <div class="form-postagem w-form">
@@ -74,29 +77,31 @@
         <div class="divisao"></div>
         -->
         <h1 class="h2">novidades</h1>
-        @foreach (var postagem in ViewBag.Timeline)
-        {
-            <div class="box-branco box-post">
-                <div class="post-info-autor w-row">
-                    <div class="coluna-info-autor w-col w-col-2">
-                        <div class="img-post-autor-wrapper">
-                            <img src="images/img-perfil.jpg">
+        <div class="lista-posts" data-ix="aparecer-posts">
+            @foreach (var postagem in ViewBag.Timeline)
+            {
+                <div class="box-branco box-post">
+                    <div class="post-info-autor w-row">
+                        <div class="coluna-info-autor w-col w-col-2">
+                            <div class="img-post-autor-wrapper">
+                                <img src="@postagem.FotoAutorPostagem">
+                            </div>
+                        </div>
+                        <div class="coluna-info-autor w-clearfix w-col w-col-10">
+                            <div class="post-nome-autor">@postagem.AutorPostagem</div>
+                            <div class="link-perfil-autor-post">ver perfil</div><img class="bt-curtiu" src="@Url.Content("~/Content/Imagens/icon-curtiu.svg")">
                         </div>
                     </div>
-                    <div class="coluna-info-autor w-clearfix w-col w-col-10">
-                        <div class="post-nome-autor">@postagem.AutorPostagem</div>
-                        <div class="link-perfil-autor-post">ver perfil</div><img class="bt-curtiu" src="@Url.Content("~/Content/Imagens/icon-curtiu.svg")">
-                    </div>
-                </div>
-                <p class="post-paragraph">@postagem.Conteudo</p>
-                @if (postagem.FotoPostagem != "Sem imagem")
+                    <p class="post-paragraph">@postagem.Conteudo</p>
+                    @if (postagem.FotoPostagem != "Sem imagem")
                 {
-                    <div class="img-post-wrapper">
-                        <img class="img-post" sizes="(max-width: 479px) 100vw, 588px" src="@postagem.FotoPostagem">
-                    </div>
-                }
-            </div>
-        }
+                        <div class="img-post-wrapper">
+                            <img class="img-post" sizes="(max-width: 479px) 100vw, 588px" src="@postagem.FotoPostagem">
+                        </div>
+                    }
+                </div>
+            }
+        </div>
     </main>
     <script>
         (function (document, window, index) {

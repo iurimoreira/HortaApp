@@ -263,6 +263,10 @@
     <Compile Include="Migrations\201706141718443_Change to UrlImagem.Designer.cs">
       <DependentUpon>201706141718443_Change to UrlImagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706211419341_FotoAutorPostagem.cs" />
+    <Compile Include="Migrations\201706211419341_FotoAutorPostagem.Designer.cs">
+      <DependentUpon>201706211419341_FotoAutorPostagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -376,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706141718443_Change to UrlImagem.resx">
       <DependentUpon>201706141718443_Change to UrlImagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706211419341_FotoAutorPostagem.resx">
+      <DependentUpon>201706211419341_FotoAutorPostagem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

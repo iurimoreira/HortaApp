@@ -67,21 +67,28 @@ namespace HortaApp.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(PerfilViewModel model, HttpPostedFileBase imagem)
         {
-            var imagemUrl = await imageService.UploadImageAsync(imagem);
+            if (imagem == null)
+            {
+                model.FotoPerfil = "Sem imagem";
+            }
+            else
+            {
+                var imagemUrl = await imageService.UploadImageAsync(imagem);
+                //Salva a imagem do perfil como Blob
+                ImagemController imagemController = new ImagemController();
+                imagemController.ControllerContext = new ControllerContext(this.Request.RequestContext, imagemController);
+                imagemController.Upload(imagemUrl);
 
-            //Salva a imagem do perfil como Blob
-            ImagemController imagemController = new ImagemController();
-            imagemController.ControllerContext = new ControllerContext(this.Request.RequestContext, imagemController);
-            imagemController.Upload(imagemUrl);
-
-            //Depois armazena as informações da imagem do perfil em uma tabela no banco de dados
-            model.FotoPerfil = imagemUrl.ToString();
-            model.Usuarioid = Session["idUsuario"].ToString();
+                //Depois armazena as informações da imagem do perfil em uma tabela no banco de dados
+                model.FotoPerfil = imagemUrl.ToString();
+                model.Usuarioid = Session["idUsuario"].ToString();
+            }
+                
 
             if (ModelState.IsValid)
             {
                 var response = await _client.PostAsJsonAsync("api/PerfilUsuario/CriarPerfilUsuario", model);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Postagem");
             }
             else
             {
@@ -112,15 +119,17 @@ namespace HortaApp.Web.Controllers
         [HttpPost]
         public async Task<ActionResult> Edit(PerfilViewModel model, HttpPostedFileBase imagem)
         {
-            var imagemUrl = await imageService.UploadImageAsync(imagem);
+            if (imagem != null)
+            {
+                var imagemUrl = await imageService.UploadImageAsync(imagem);
+                //Salva a imagem do perfil como Blob
+                ImagemController imagemController = new ImagemController();
+                imagemController.ControllerContext = new ControllerContext(this.Request.RequestContext, imagemController);
+                imagemController.Upload(imagemUrl);
 
-            //Salva a imagem do perfil como Blob
-            ImagemController imagemController = new ImagemController();
-            imagemController.ControllerContext = new ControllerContext(this.Request.RequestContext, imagemController);
-            imagemController.Upload(imagemUrl);
-
-            model.FotoPerfil = imagemUrl.ToString();
-
+                model.FotoPerfil = imagemUrl.ToString();
+            }
+                
             var response = await _client.PostAsJsonAsync("api/PerfilUsuario/AtualizarPerfilUsuario", model);
 
             return RedirectToAction("Details", "PerfilUsuario", new { id = model.Usuarioid });

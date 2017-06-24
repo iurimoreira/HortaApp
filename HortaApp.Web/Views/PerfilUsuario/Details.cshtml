@@ -34,7 +34,9 @@
 </head>
 <body>
     <header class="header header-interno w-clearfix">
-        <img class="image" src="@Url.Content("~/Content/Imagens/logo-homegrown-branco.svg")" width="160">
+        <a href="@Url.Action("Index","Postagem")">
+            <img class="image" src="@Url.Content("~/Content/Imagens/logo-homegrown-branco.svg")" width="160">
+        </a>
         @Html.Partial("~/Views/Shared/_HeaderPartial.cshtml")
         <!--
             <ul class="menu-principal w-list-unstyled">
@@ -101,7 +103,7 @@
                             @if (postagem.FotoPostagem != "Sem imagem")
                             {
                                 <div class="img-post-wrapper">
-                                    <img class="img-post" sizes="(max-width: 479px) 100vw, (max-width: 991px) 588px, 59vw" src="@postagem.FotoPostagem">
+                                    <img class="img-post" src="@postagem.FotoPostagem">
                                 </div>
                             }
                         </div>

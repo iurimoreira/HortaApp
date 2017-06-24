@@ -1,0 +1,53 @@
+﻿@model HortaApp.Web.Models.ViewModels.PerfilViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Create", "PerfilUsuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken() 
+
+
+#line default
+#line hidden
+
+#line 11 "C:\Users\Iuri\Desktop\Projetos Iuri\HortaApp\HortaApp.Web\Views\PerfilUsuario\Edit.cshtml"
+
+    <div class="form-horizontal">
+        <h4>PerfilUsuario</h4>
+        <hr />
+        @Html.TextBoxFor(m => m.NomeUsuario, new { @class = "campo-texto w-input", Value = "Nome do usuário", onclick = "if(this.value  == 'Nome do usuário') { this.value = ''; } ", onblur = "if(this.value == ''){this.value ='Nome do usuário'}" })
+        @                                                                                                                                                                                                                                                                  
+rfilUsuarioId)
+        @Html.HiddenFor(model => model.Usuarioid)
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NomeUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NomeUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NomeUsuario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="imagem">Imagem</label>
+            <div class="col-md-10">
+                <input type="file" name="imagem" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Url.Content("~/Scripts/webflow.js")
+</div>

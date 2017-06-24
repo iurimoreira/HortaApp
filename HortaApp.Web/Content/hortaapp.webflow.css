@@ -150,6 +150,14 @@
             color: #3d6ce6;
         }
 
+    .bt-principal.bt-add-img-perfil {
+        margin-bottom: 1em;
+        border: 3px solid #3d6ce6;
+        background-color: transparent;
+        color: #3d6ce6;
+        font-weight: 600;
+    }
+
 .menu-principal {
     display: -webkit-box;
     display: -webkit-flex;
@@ -235,6 +243,11 @@
     font-size: 0.9em;
     text-align: center;
 }
+
+    .text-box-formulario.maior {
+        margin-bottom: 1em;
+        font-size: 1.2em;
+    }
 
 .link {
     color: #3d6ce6;

@@ -65,12 +65,7 @@
                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "campo-texto w-input", Value = "Senha", onclick = "if(this.value  == 'Senha') { this.value = ''; } ", onblur = "if(this.value == ''){this.value ='Senha'}" })
                     <input class="bt-principal w-button" data-wait="Please wait..." type="submit" value="Criar conta">
                 }
-                <div class="w-form-done">
-                    <div>Thank you! Your submission has been received!</div>
-                </div>
-                <div class="w-form-fail">
-                    <div>Oops! Something went wrong while submitting the form</div>
-                </div>
+                
             </div>
             <div class="text-box-formulario">
                 Já possui uma conta? <span style = "color:#3d6ce6;">@Html.ActionLink("Entre por aqui.", "Login")</span>

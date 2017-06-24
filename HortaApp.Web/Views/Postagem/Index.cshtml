@@ -35,15 +35,17 @@
 </head>
 <body>
     <header class="header header-interno w-clearfix">
-        <img class="image" src="@Url.Content("~/Content/Imagens/logo-homegrown-branco.svg")" width="160">
-        @Html.Partial("~/Views/Shared/_HeaderPartial.cshtml")
-        <!--
+            <a href="@Url.Action("Index")">
+                <img class="image" src="@Url.Content("~/Content/Imagens/logo-homegrown-branco.svg")" width="160">
+            </a>
+            @Html.Partial("~/Views/Shared/_HeaderPartial.cshtml")
+            <!--
             <ul class="menu-principal w-list-unstyled">
                 <li class="item-menu-principal">
                     <a class="link-block w-inline-block" href="javascript:document.getElementById('logoutForm').submit()">
                         <div class="link-item-menu-interno">Sair</div>
                     </a>
-                
+
                 </li>
                 <li class="item-menu-principal">
                     <a class="link-block w-inline-block" href="javascript:document.getElementById('logoutForm').submit()">
@@ -52,7 +54,7 @@
                 </li>
             </ul>
         -->
-    </header>
+</header>
     <main class="main">
         @if (Request.IsAuthenticated)
         {

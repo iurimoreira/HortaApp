@@ -34,6 +34,7 @@ namespace HortaApp.Web.Controllers
         }
 
         // GET: PerfilUsuario/Details/5
+        [Authorize]
         public async Task<ActionResult> Details(string id)
         {
             var uriparameter = "api/PerfilUsuario/PerfilExiste?id=" + id;
@@ -45,7 +46,7 @@ namespace HortaApp.Web.Controllers
             {
                 var JsonString = await response.Content.ReadAsStringAsync();
                 var perfilUsuario = JsonConvert.DeserializeObject<List<PerfilViewModel>>    (JsonString);
-
+                ViewBag.SessionId = Session["idUsuario"].ToString();
                 return View(perfilUsuario[0]);
             }
             else

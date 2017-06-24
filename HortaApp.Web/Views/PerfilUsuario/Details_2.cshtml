@@ -1,0 +1,54 @@
+﻿@model HortaApp.Web.Models.ViewModels.PerfilViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+<span>@ViewBag.Message</span>
+
+
+<h2>@Html.DisplayFor(model => model.NomeUsuario)</h2>
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuarioid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuarioid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoPerfil)
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.FotoPerfil)"/>
+            
+        </dd>
+
+    </dl>
+</div>
+
+@if (Model.Usuarioid == ViewBag.SessionId)
+{
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.Usuarioid }) |
+        @Html.ActionLink("Alterar sua senha", "ChangePassword", "Manage")
+    </p>
+}
+
+@foreach (var postagem in ViewBag.listaPostagens)
+{
+    <div class="box-livro">
+        <p class="p-titulo"><strong>Autor:</strong> @postagem.AutorPostagem</p>
+        <p class="p-titulo"><strong>Conteúdo:</strong> @postagem.Conteudo</p>
+        @if (postagem.FotoPostagem != "Sem imagem")
+        {
+            <img src="@postagem.FotoPostagem" />
+        }
+
+
+    </div>
+}

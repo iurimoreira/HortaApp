@@ -18,5 +18,6 @@ namespace HortaApp.Web.Models.ViewModels
 
         [Display(Name = "Foto de perfil")]
         public string FotoPerfil { get; set; }
+
     }
 }

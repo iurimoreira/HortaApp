@@ -7,7 +7,7 @@
         <ul class="menu-principal w-list-unstyled">
             <li class="item-menu-principal">
                 <a class="link-block w-inline-block" href="@Url.Action("Details","PerfilUsuario",new {id = User.Identity.GetUserId()})">
-                    <div class="link-item-menu-interno">Olá @Html.Raw(User.Identity.GetUserName()).ToString()</div>
+                    <div class="link-item-menu-interno">Olá,  @Html.Raw(User.Identity.GetUserName()).ToString()</div>
                 </a>
                 @*
                     @Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "Details", "PerfilUsuario", routeValues: null, htmlAttributes: new { id = User.Identity.GetUserId() })-->

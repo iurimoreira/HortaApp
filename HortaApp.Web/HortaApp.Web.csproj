@@ -306,7 +306,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\PerfilUsuario\Create.cshtml" />
-    <Content Include="Views\PerfilUsuario\Details.cshtml" />
+    <Content Include="Views\PerfilUsuario\Details_2.cshtml" />
     <Content Include="Views\PerfilUsuario\Edit.cshtml" />
     <Content Include="Views\Postagem\Create.cshtml" />
     <Content Include="Views\Postagem\Delete.cshtml" />
@@ -319,6 +319,7 @@
     <Content Include="Views\Postagem\Index.cshtml" />
     <Content Include="Views\Shared\_HeaderPartial.cshtml" />
     <Content Include="Views\Postagem\_PostagemPartial.cshtml" />
+    <Content Include="Views\PerfilUsuario\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
